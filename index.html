@@ -1,57 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>クイズ</title>
+<html lang="ja">
 
+<head>
+  <meta charset="UTF-8">
+  <title>1問クイズ</title>
   <style>
+    /* CSS：見た目を整える（色と形） */
     body {
       text-align: center;
-      background: lightblue;
       font-family: sans-serif;
+      padding-top: 50px;
     }
 
     button {
-      padding: 1px 2px;
-      margin: 30px;
       font-size: 20px;
-      border-radius: 10px;
-      border: none;
-      background: orange;
-      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
     }
 
-    #result {
+    .success {
+      color: red;
       font-size: 30px;
-      margin-top: 20px;
+      font-weight: bold;
     }
   </style>
-
 </head>
-
 
 <body>
 
-  <h1>クイズ</h1>
-  <h2>第1問</h2>
-  <p>testuo </p>
-  <h2>第2問</h2>
-  <p>Q. 日本の首都は？</p>
+  <h1>クイズ：第1問</h1>
+  <p>Webページの「見た目」をデザインする言語はどっち？</p>
 
-  <button onclick="wrong()">大阪</button>
-  <button onclick="correct()">東京</button>
-  <button onclick="wrong()">福岡</button>
+  <button onclick="maru()">CSS</button>
+  <button onclick="batsu()">HTML</button>
 
-  <p id="result"></p>
+  <div id="kekka"></div>
 
   <script>
-    function correct() {
-      document.getElementById("result").innerText = "正解！";
+    /* JavaScript：ボタンを押した時の動き */
+    function maru() {
+      document.getElementById("kekka").innerHTML = "<p class='success'>正解！おめでとう！</p>";
     }
 
-    function wrong() {
-      document.getElementById("result").innerText = "不正解！";
+    function batsu() {
+      alert("ざんねん！HTMLは骨組みだよ。");
     }
   </script>
 
 </body>
+
 </html>
